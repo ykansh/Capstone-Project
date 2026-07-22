@@ -1,0 +1,4 @@
+[ 2026-07-21 18:18:51,570 ] root - INFO - Data loaded from https://raw.githubusercontent.com/vikashishere/Datasets/refs/heads/main/data.csv
+[ 2026-07-21 18:18:51,570 ] root - INFO - pre-processing...
+[ 2026-07-21 18:18:51,574 ] root - INFO - Data preprocessing completed
+[ 2026-07-21 18:18:51,574 ] root - ERROR - Failed to complete the data ingestion process: name 'test_size' is not defined

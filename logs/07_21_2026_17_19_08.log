@@ -1,0 +1,2 @@
+[ 2026-07-21 17:19:08,378 ] root - ERROR - File not found: params.yaml
+[ 2026-07-21 17:19:08,378 ] root - ERROR - Failed to complete the data ingestion process: [Errno 2] No such file or directory: 'params.yaml'
