@@ -1,0 +1,6 @@
+[ 2026-07-23 23:28:55,476 ] httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-07-23 23:28:55,481 ] dagshub - INFO - Accessing as iamanshchourasiya
+[ 2026-07-23 23:28:56,402 ] httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/iamanshchourasiya/Capstone-Project "HTTP/1.1 200 OK"
+[ 2026-07-23 23:28:57,321 ] httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-07-23 23:28:57,324 ] dagshub - INFO - Initialized MLflow to track repo "iamanshchourasiya/Capstone-Project"
+[ 2026-07-23 23:28:57,325 ] dagshub - INFO - Repository iamanshchourasiya/Capstone-Project initialized!

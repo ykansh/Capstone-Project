@@ -1,0 +1,9 @@
+[ 2026-07-23 22:13:40,155 ] root - INFO - Data loaded and NaNs filled from ./data/interim/train_processed.csv
+[ 2026-07-23 22:13:40,156 ] root - INFO - Data loaded and NaNs filled from ./data/interim/test_processed.csv
+[ 2026-07-23 22:13:40,157 ] root - INFO - Applying BOW...
+[ 2026-07-23 22:13:40,181 ] root - INFO - Bag of Words applied and data transformed
+[ 2026-07-23 22:13:40,184 ] root - INFO - Data saved to ./data/processed/train_bow.csv
+[ 2026-07-23 22:13:40,187 ] root - INFO - Data saved to ./data/processed/test_bow.csv
+[ 2026-07-23 22:13:40,919 ] root - INFO - Data loaded from ./data/processed/train_bow.csv
+[ 2026-07-23 22:13:40,923 ] root - INFO - Model training completed
+[ 2026-07-23 22:13:40,923 ] root - INFO - Model saved to models/model.pkl
