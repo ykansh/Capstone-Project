@@ -18,7 +18,7 @@ warnings.filterwarnings("ignore")
 def lemmatization(text):
     """Lemmatize the text."""
     lemmatizer = WordNetLemmatizer()
-    text = text.split() 
+    text = text.split()
     text = [lemmatizer.lemmatize(word) for word in text]
     return " ".join(text)
 
@@ -69,13 +69,13 @@ def normalize_text(text):
 
 # Below code block is for local use
 # -------------------------------------------------------------------------------------
-mlflow.set_tracking_uri('https://dagshub.com/iamanshchourasiya/Capstone-Project.mlflow')
-dagshub.init(repo_owner='iamanshchourasiya', repo_name='Capstone-Project', mlflow=True)
+# mlflow.set_tracking_uri('https://dagshub.com/vikashdas770/YT-Capstone-Project.mlflow')
+# dagshub.init(repo_owner='vikashdas770', repo_name='YT-Capstone-Project', mlflow=True)
 # -------------------------------------------------------------------------------------
 
 # Below code block is for production use
 # -------------------------------------------------------------------------------------
-# Set up DagsHub credentials for MLflow tracking
+# # Set up DagsHub credentials for MLflow tracking
 # dagshub_token = os.getenv("CAPSTONE_TEST")
 # if not dagshub_token:
 #     raise EnvironmentError("CAPSTONE_TEST environment variable is not set")
@@ -112,30 +112,19 @@ PREDICTION_COUNT = Counter(
 
 # ------------------------------------------------------------------------------------------
 # Model and vectorizer setup
-# ------------------------------------------------------------------------------------------
-# Model and vectorizer setup
+model_name = "my_model"
+def get_latest_model_version(model_name):
+    client = mlflow.MlflowClient()
+    latest_version = client.get_latest_versions(model_name, stages=["Production"])
+    if not latest_version:
+        latest_version = client.get_latest_versions(model_name, stages=["None"])
+    return latest_version[0].version if latest_version else None
 
-MODEL_NAME = "my_model"
-MODEL_STAGE = "Staging"   # Change to "Production" if you promote the model later
-
-model_uri = f"models:/{MODEL_NAME}/{MODEL_STAGE}"
-
-print("=" * 60)
-print(f"Loading model from: {model_uri}")
-
-try:
-    model = mlflow.pyfunc.load_model(model_uri)
-    print("✅ Model loaded successfully!")
-except Exception as e:
-    print(f"❌ Failed to load model: {e}")
-    raise
-
-# Load vectorizer
-with open("models/vectorizer.pkl", "rb") as f:
-    vectorizer = pickle.load(f)
-
-print("✅ Vectorizer loaded successfully!")
-print("=" * 60)
+model_version = get_latest_model_version(model_name)
+model_uri = f'models:/{model_name}/{model_version}'
+print(f"Fetching model from: {model_uri}")
+model = mlflow.pyfunc.load_model(model_uri)
+vectorizer = pickle.load(open('models/vectorizer.pkl', 'rb'))
 
 # Routes
 @app.route("/")
@@ -177,4 +166,4 @@ def metrics():
 
 if __name__ == "__main__":
     # app.run(debug=True) # for local use
-    app.run(debug=True, host="0.0.0.0", port=5001)  # Accessible from outside Docker
+    app.run(debug=True, host="0.0.0.0", port=5000)  # Accessible from outside Docker

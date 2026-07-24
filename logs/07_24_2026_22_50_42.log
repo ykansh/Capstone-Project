@@ -1,0 +1,7 @@
+[ 2026-07-24 22:50:51,988 ] dagshub - INFO - Accessing as iamanshchourasiya
+[ 2026-07-24 22:50:52,956 ] dagshub - INFO - Initialized MLflow to track repo "iamanshchourasiya/Capstone-Project"
+[ 2026-07-24 22:50:52,957 ] dagshub - INFO - Repository iamanshchourasiya/Capstone-Project initialized!
+[ 2026-07-24 22:50:57,066 ] root - INFO - Model loaded from ./models/model.pkl
+[ 2026-07-24 22:50:57,071 ] root - INFO - Data loaded from ./data/processed/test_bow.csv
+[ 2026-07-24 22:50:57,075 ] root - INFO - Model evaluation metrics calculated
+[ 2026-07-24 22:50:57,075 ] root - INFO - Metrics saved to reports/metrics.json
