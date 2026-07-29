@@ -69,13 +69,13 @@ def normalize_text(text):
 
 # Below code block is for local use
 # -------------------------------------------------------------------------------------
-# mlflow.set_tracking_uri('https://dagshub.com/vikashdas770/YT-Capstone-Project.mlflow')
-# dagshub.init(repo_owner='vikashdas770', repo_name='YT-Capstone-Project', mlflow=True)
+# mlflow.set_tracking_uri('https://dagshub.com/iamanshchourasiya/Capstone-Project.mlflow')
+# dagshub.init(repo_owner='iamanshchourasiya', repo_name='Capstone-Project', mlflow=True)
 # -------------------------------------------------------------------------------------
 
 # Below code block is for production use
 # -------------------------------------------------------------------------------------
-# # Set up DagsHub credentials for MLflow tracking
+# # # Set up DagsHub credentials for MLflow tracking
 dagshub_token = os.getenv("CAPSTONE_TEST")
 if not dagshub_token:
     raise EnvironmentError("CAPSTONE_TEST environment variable is not set")
@@ -88,7 +88,7 @@ repo_owner = "iamanshchourasiya"
 repo_name = "Capstone-Project"
 # Set up MLflow tracking URI
 mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
-# -------------------------------------------------------------------------------------
+# # -------------------------------------------------------------------------------------
 
 
 # Initialize Flask app
@@ -166,4 +166,4 @@ def metrics():
 
 if __name__ == "__main__":
     # app.run(debug=True) # for local use
-    app.run(debug=True, host="0.0.0.0", port=5000)  # Accessible from outside Docker
+    app.run(debug=True, host="0.0.0.0", port=5001)  # Accessible from outside Docker
